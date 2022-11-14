@@ -1,1 +1,13 @@
-<h1> <%= @flat.name %> </h1>
+<div class = 'container pt-3'>
+  <h1 class = 'text-center'> A little bit more about this flat </h1>
+  <div class = 'card'>
+    <div class = 'card-text'>
+      <p>Name:<%= @flat.name %></p>
+      <p>Address:<%= @flat.address %></p>
+      <p>Description:<%= @flat.description %></p>
+      <p>Price: €<%= @flat.price_per_night %></p>
+      <p>Number Of Guests: <%= @flat.number_of_guests %></p>
+    </div>
+    <%= link_to "Back", flats_path, class: 'btn btn-outline-danger'  %>
+  </div>
+</div>
