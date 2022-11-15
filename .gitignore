@@ -22,6 +22,8 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 
+# Ignore .env file containing credentials.
+.env*
 
 /public/assets
 
