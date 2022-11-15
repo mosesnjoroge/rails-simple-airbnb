@@ -1,9 +1,9 @@
-<div class="container py-5">
+<div class="container p-5">
   <div class="column">
     <div class="col-12 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <h2 class = 'text-center'>Post your Flat</h2>
-        <%= simple_form_for @flat do |f| %>
+        <%= simple_form_for flat do |f| %>
           <%= f.input :name, placeholder: 'Victoria & Albert museum' %>
           <%= f.input :address, placeholder: 'Cromwell Rd, London SW7 2RL, United Kingdom' %>
           <%= f.input :description, placeholder: 'located near a popular london museum' %>

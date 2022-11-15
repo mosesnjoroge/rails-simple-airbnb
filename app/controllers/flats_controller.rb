@@ -1,7 +1,12 @@
 class FlatsController < ApplicationController
   before_action :set_flat, except: %i[index new create]
   def index
-    @flats = Flat.all
+    if params[:query].present?
+      @query = params[:query]
+      @flats = Flat.where('name LIKE ?', "%#{params[:query]}%")
+    else
+      @flats = Flat.all
+    end
   end
 
   def show; end
@@ -13,7 +18,7 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     if @flat.save
-      redirect_to flat(@flat), notice: 'flat was successfully created'
+      redirect_to flat_path(@flat), notice: 'flat was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,7 +27,7 @@ class FlatsController < ApplicationController
   def update
     @flat.update(flat_params)
     @flat.save
-    redirect_to flat(@flat), notice: 'flat was successfully updated'
+    redirect_to flat_path(@flat), notice: 'flat was successfully updated'
   end
 
   def destroy

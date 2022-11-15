@@ -13,4 +13,5 @@
  *= require_tree .
  *= require_self
  */
-@import "components/_card.css";
+@import "./components/_card.css";
+@import "./components/_form.css";
