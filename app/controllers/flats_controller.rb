@@ -22,12 +22,12 @@ class FlatsController < ApplicationController
   def update
     @flat.update(flat_params)
     @flat.save
-    redirect_to flats_path
+    redirect_to flat(@flat), notice: 'flat was successfully updated'
   end
 
   def destroy
     @flat.destroy
-    redirect_to flats_path
+    redirect_to flats_path, notice: 'flat was successfully deleted'
   end
 
   private

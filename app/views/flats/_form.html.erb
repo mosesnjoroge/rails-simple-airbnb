@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <div class="column">
+    <div class="col-12 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h2 class = 'text-center'>Post your Flat</h2>
+        <%= simple_form_for @flat do |f| %>
+          <%= f.input :name, placeholder: 'Victoria & Albert museum' %>
+          <%= f.input :address, placeholder: 'Cromwell Rd, London SW7 2RL, United Kingdom' %>
+          <%= f.input :description, placeholder: 'located near a popular london museum' %>
+          <%= f.input :price_per_night, placeholder: '€ 40 per/night' %>
+          <%#= f.input :photo, as: :file, direct_upload: true %>
+          <%= f.input :number_of_guests, placeholder: '2 guests' %>
+          <%= f.submit class: 'btn btn-outline-primary' %>
+          <%= link_to "Cancel", flats_path, class: 'btn btn-outline-danger' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,7 @@
       <p>Price: €<%= @flat.price_per_night %></p>
       <p>Number Of Guests: <%= @flat.number_of_guests %></p>
     </div>
+    <%= link_to "Add", flats_path, class: 'btn btn-outline-primary'  %>
     <%= link_to "Back", flats_path, class: 'btn btn-outline-danger'  %>
   </div>
 </div>
