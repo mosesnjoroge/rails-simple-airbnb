@@ -2,11 +2,20 @@
   <div>
     <div class="card-category">
       <% @flats.each do |flat| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3),
-          rgba(0,0,0,0.3))">
-            <%= link_to flat_path(flat) do %>
-                <%= flat.name %>
-            <% end %>
+        <div class="card">
+          <div class = 'card-text'>
+            <%= flat.name %>
+            <%= flat.address %>
+            <%= flat.price_per_night %>
+            <%= flat.number_of_guests %>
+          </div>
+          <div class = "d-flex">
+            <%= link_to "More Info", flat_path(flat), class: 'btn btn-outline-primary'  %>
+            <%= link_to "Edit", edit_flat_path(flat), class: 'btn btn-outline-warning'  %>
+            <%= link_to "Remove", flat_path(flat),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "ms-3 text-danger", class: 'btn btn-outline-danger'  %>
+          </div>
         </div>
       <% end %>
     </div>
