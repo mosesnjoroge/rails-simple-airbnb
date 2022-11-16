@@ -1,7 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @flat.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @flat.address %>&key=AIzaSyAPpx0wk4d-AQ8bhe8-a-ihC7NXLoPElhg')">
-  <div class="container">
-
-  </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), background-image: url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/[<%= @flat.address %>]/400x400?access_token=<%= ENV['MAPBOX_KEY'] %>)">
 </div>
 
 <div class = 'container pt-3'>
@@ -17,7 +14,7 @@
     <%= link_to "Add", flats_path, class: 'btn btn-outline-primary'  %>
     <%= link_to "Back", flats_path, class: 'btn btn-outline-danger'  %>
   </div>
-  <div class="col-4">
+  <div class="col-4 p-2">
     <div class="card">
       <h5>Book now</h5>
 
